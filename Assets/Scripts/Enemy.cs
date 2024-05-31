@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
 
     Rigidbody2D rgb2d;
 
+    [SerializeField]
+    int hp = 4;
+
     private void Awake()
     {
         rgb2d = GetComponent<Rigidbody2D>();
@@ -32,5 +35,16 @@ public class Enemy : MonoBehaviour
     private void Attack()
     {
         Debug.Log("hit");
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+
+        if (hp < 1)
+        {
+            Destroy(gameObject);
+        }
     }
 }
