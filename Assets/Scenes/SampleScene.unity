@@ -2046,6 +2046,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02759de4caa726443b11f0041a8bcf4a, type: 3}
+--- !u!1 &595082699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 595082700}
+  - component: {fileID: 595082701}
+  m_Layer: 0
+  m_Name: wpn_Knife
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &595082700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595082699}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 864193655}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &595082701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595082699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456da815bebc5284691ad87d4da4e5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToAttack: 1.5
+  knifePreFab: {fileID: 48800958373556907, guid: 73d8b2decfd48624f8c90fed556b3da4, type: 3}
 --- !u!4 &595460641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 629004254569926506, guid: 02759de4caa726443b11f0041a8bcf4a, type: 3}
@@ -3043,6 +3089,7 @@ Transform:
   - {fileID: 1331380896}
   - {fileID: 416462978}
   - {fileID: 498371583}
+  - {fileID: 595082700}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &864193656
