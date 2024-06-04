@@ -26,7 +26,11 @@ public class PlayerMove : MonoBehaviour
     }
 
 
-
+    private void Start()
+    {
+        lastHorizontalVector = -1f;
+        lastHorizontalVector = 1f;
+    }
 
 
     // Update is called once per frame

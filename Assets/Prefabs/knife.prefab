@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5346798985027692848}
   - component: {fileID: 4663988313978469055}
   - component: {fileID: 5232138051743622242}
+  - component: {fileID: -5631041321505594026}
   m_Layer: 0
   m_Name: knife
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  damage: 5
+--- !u!114 &-5631041321505594026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48800958373556907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3084e08039c7d2b48a7a638fae331ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
