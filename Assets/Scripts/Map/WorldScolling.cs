@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class WordScolling : MonoBehaviour
 {
-    [SerializeField]
     Transform playerTransform;
 
     Vector2Int currentTilePosition = new Vector2Int(0, 0);
@@ -37,6 +36,7 @@ public class WordScolling : MonoBehaviour
     private void Start()
     {
         UpdateTilesOnScreen();
+        playerTransform = GameManager.instance.playerTransform;
     }
 
     public void Add(GameObject titleGameObject, Vector2Int tilePosition)

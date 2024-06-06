@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 public class StartGameBotton : MonoBehaviour
 {
 
-    public void StartGame()
+    public void StartGame(string stageToPlay)
     {
-        SceneManager.LoadScene("GamePlayStage");
+        SceneManager.LoadScene("Essential", LoadSceneMode.Single);
+        SceneManager.LoadScene(stageToPlay, LoadSceneMode.Additive);
     }
 
 

@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     AudioClip switchTo;
     public void Play(AudioClip music, bool interrupt = false)
     {
-        if (interrupt = true)
+        if (interrupt == true)
         {
             volume = 1f;
             audioSource.volume = volume;
