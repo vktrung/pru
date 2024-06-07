@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
@@ -5,6 +6,12 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Transform weaponObjectsContainer;
     [SerializeField] WeaponData startingWeapon;
 
+    List<WeaponBase> weapons;
+
+    private void Awake()
+    {
+        weapons = new List<WeaponBase>();
+    }
     private void Start()
     {
         AddWeapon(startingWeapon);
@@ -14,12 +21,21 @@ public class WeaponManager : MonoBehaviour
     {
         GameObject weaponGameObject = Instantiate(weaponData.weaponBasePrefabs, weaponObjectsContainer);
 
-        weaponGameObject.GetComponent<WeaponBase>().SetData(weaponData);
+        WeaponBase weaponBase = weaponGameObject.GetComponent<WeaponBase>();
+
+        weaponBase.SetData(weaponData);
+        weapons.Add(weaponBase);
 
         Level level = GetComponent<Level>();
         if (level != null)
         {
             level.AddUpgradesIntoTheListOfAvailableUpgrades(weaponData.upgrades);
         }
+    }
+
+    internal void UpgradeWeapon(UpGradeData upgradeData)
+    {
+        WeaponBase weaponToUpgrade = weapons.Find(wd => wd.weaponData == upgradeData.weaponData);
+        weaponToUpgrade.Upgrade(upgradeData);
     }
 }

@@ -16,6 +16,10 @@ public class ThrowingDaggerWeapon : WeaponBase
     {
         GameObject throwKnife = Instantiate(knifePreFab);
         throwKnife.transform.position = transform.position;
-        throwKnife.GetComponent<ThrowingDaggerProjectTile>().SetDirection(playerMove.lastHorizontalVector, 0f);
+        ThrowingDaggerProjectTile throwingDaggerProjectTile = throwKnife.GetComponent<ThrowingDaggerProjectTile>();
+
+        throwingDaggerProjectTile.SetDirection(playerMove.lastHorizontalVector, 0f);
+
+        throwingDaggerProjectTile.damage = weaponStats.damage;
     }
 }

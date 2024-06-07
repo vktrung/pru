@@ -89,6 +89,7 @@ public class Level : MonoBehaviour
         switch (upgradeData.type)
         {
             case UpgradeType.WeaponUpgrade:
+                weaponManager.UpgradeWeapon(upgradeData);
                 break;
             case UpgradeType.ItemUpgrade:
                 break;

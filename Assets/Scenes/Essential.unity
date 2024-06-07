@@ -1437,8 +1437,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1000
-  currentHp: 10
+  currentHp: 500
   armor: 0
+  hpRegenerationRate: 1
+  hpRegenerationTimer: 0
   hpBar: {fileID: 416462979}
   level: {fileID: 0}
 --- !u!114 &864193659
@@ -1455,8 +1457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   experienceBar: {fileID: 1312406908}
   upgradePanel: {fileID: 1005517974}
-  upgrades:
-  - {fileID: 11400000, guid: 8882ed9ed6fea9346ab5a8dcbddc54c8, type: 2}
+  upgrades: []
   acquiredUpgrade: []
 --- !u!114 &864193660
 MonoBehaviour:
@@ -1499,7 +1500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectsContainer: {fileID: 221365718}
-  startingWeapon: {fileID: 11400000, guid: 7c3ea1bf7a4f8ac40b93995368537574, type: 2}
+  startingWeapon: {fileID: 11400000, guid: 553cdddf1b3eeaa4989eb61297fa7d6f, type: 2}
 --- !u!1 &911880750
 GameObject:
   m_ObjectHideFlags: 0
