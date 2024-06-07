@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -6,6 +7,13 @@ public class Level : MonoBehaviour
     int exp = 0;
     [SerializeField] ExperienceBar experienceBar;
     [SerializeField] UpGradePanelManager upgradePanel;
+
+
+    [SerializeField] List<UpGradeData> upgrades;
+    List<UpGradeData> selectedUpgrades;
+    [SerializeField] List<UpGradeData> acquiredUpgrade;
+
+
     int TO_LEVEL_UP
     {
         get
@@ -37,9 +45,41 @@ public class Level : MonoBehaviour
 
     private void LevelUp()
     {
-        upgradePanel.OpenPanel();
+        if (selectedUpgrades == null) { selectedUpgrades = new List<UpGradeData>(); }
+        selectedUpgrades.Clear();
+        selectedUpgrades.AddRange(GetUpgrade(4));
+
+        upgradePanel.OpenPanel(selectedUpgrades);
         exp -= TO_LEVEL_UP;
         level += 1;
         experienceBar.SetLevelText(level);
+    }
+
+    public List<UpGradeData> GetUpgrade(int count)
+    {
+        List<UpGradeData> upgradeList = new List<UpGradeData>();
+
+        if (count > upgrades.Count)
+        {
+            count = upgrades.Count;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+        }
+
+
+        return upgradeList;
+    }
+
+    internal void Upgrade(int selectedUpgradeId)
+    {
+        UpGradeData upgradeData = selectedUpgrades[selectedUpgradeId];
+
+        if (acquiredUpgrade == null) { acquiredUpgrade = new List<UpGradeData> { upgradeData }; }
+
+        acquiredUpgrade.Add(upgradeData);
+        upgrades.Remove(upgradeData);
     }
 }
