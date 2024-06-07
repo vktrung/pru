@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -21,4 +22,5 @@ public class WeaponData : ScriptableObject
     public string Name;
     public WeaponStats stats;
     public GameObject weaponBasePrefabs;
+    public List<UpGradeData> upgrades;
 }

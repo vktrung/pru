@@ -16,5 +16,10 @@ public class WeaponManager : MonoBehaviour
 
         weaponGameObject.GetComponent<WeaponBase>().SetData(weaponData);
 
+        Level level = GetComponent<Level>();
+        if (level != null)
+        {
+            level.AddUpgradesIntoTheListOfAvailableUpgrades(weaponData.upgrades);
+        }
     }
 }
