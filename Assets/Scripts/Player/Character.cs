@@ -12,11 +12,13 @@ public class Character : MonoBehaviour
     [SerializeField] StatusBar hpBar;
 
     [HideInInspector] public Level level;
+    [HideInInspector] public Coins coins;
     private bool isDead;
 
     private void Awake()
     {
         level = GetComponent<Level>();
+        coins = GetComponent<Coins>();
     }
 
 
