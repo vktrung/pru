@@ -14,10 +14,14 @@ public class Level : MonoBehaviour
     [SerializeField] List<UpGradeData> acquiredUpgrade;
 
     WeaponManager weaponManager;
+    PassiveItem passiveItem;
+
+    [SerializeField] List<UpGradeData> upgradesAvailableOnStart;
 
     private void Awake()
     {
         weaponManager = GetComponent<WeaponManager>();
+        passiveItem = GetComponent<PassiveItem>();
     }
 
 
@@ -33,6 +37,7 @@ public class Level : MonoBehaviour
     {
         experienceBar.UpdateExpSlider(exp, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
+        AddUpgradesIntoTheListOfAvailableUpgrades(upgradesAvailableOnStart);
     }
 
     public void AddExperience(int amount)
@@ -92,11 +97,14 @@ public class Level : MonoBehaviour
                 weaponManager.UpgradeWeapon(upgradeData);
                 break;
             case UpgradeType.ItemUpgrade:
+                passiveItem.UpgradeItem(upgradeData);
                 break;
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeData.weaponData);
                 break;
             case UpgradeType.ItemUnlock:
+                passiveItem.Equip(upgradeData.item);
+                AddUpgradesIntoTheListOfAvailableUpgrades(upgradeData.item.upgrades);
                 break;
         }
 
@@ -106,6 +114,7 @@ public class Level : MonoBehaviour
 
     internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpGradeData> upgradesToAdd)
     {
+        if (upgradesToAdd == null) { return; }
         this.upgrades.AddRange(upgradesToAdd);
     }
 }

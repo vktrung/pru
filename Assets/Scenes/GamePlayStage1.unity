@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d605a1d812eac54093261305cf9491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToCompleteLevel: 5
+  timeToCompleteLevel: 60
   levelCompletePanel: {fileID: 0}
 --- !u!1 &356463840
 GameObject:

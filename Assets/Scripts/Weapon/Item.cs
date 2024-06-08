@@ -1,19 +1,39 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class ItemStats
+{
+    public int armor;
+
+    internal void Sum(ItemStats stats)
+    {
+        armor += stats.armor;
+    }
+}
 
 [CreateAssetMenu]
 public class Item : ScriptableObject
 {
     public string Name;
-    public int armor;
+    public ItemStats stats;
+    public List<UpGradeData> upgrades;
+
+    public void Init(string Name)
+    {
+        this.Name = Name;
+        stats = new ItemStats();
+        upgrades = new List<UpGradeData>();
+    }
 
     public void Equip(Character character)
     {
-        character.armor += armor;
+        character.armor += stats.armor;
     }
 
     public void UnEquip(Character character)
     {
-        character.armor -= armor;
+        character.armor -= stats.armor;
     }
 }

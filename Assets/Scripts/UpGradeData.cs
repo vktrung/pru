@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+
 public enum UpgradeType
 {
     WeaponUpgrade,
@@ -7,7 +9,6 @@ public enum UpgradeType
     WeaponUnlock,
     ItemUnlock
 }
-
 
 [CreateAssetMenu]
 public class UpGradeData : ScriptableObject
@@ -18,4 +19,7 @@ public class UpGradeData : ScriptableObject
 
     public WeaponData weaponData;
     public WeaponStats weaponUpgradeStats;
+
+    public Item item;
+    public ItemStats itemStats;
 }
