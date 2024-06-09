@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
-    [SerializeField] StageProgress stageProgress;
     [SerializeField] GameObject enemy;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
@@ -22,12 +21,7 @@ public class EnemiesManager : MonoBehaviour
         //spawning main enemy object
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
-
-        Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
-        newEnemyComponent.SetTarget(player);
-        newEnemyComponent.SetStats(enemyToSpawn.stats);
-        newEnemyComponent.UpdateStatsForProgress(stageProgress.Progress);
-
+        newEnemy.GetComponent<Enemy>().SetTarget(player);
         newEnemy.transform.parent = transform;
 
         //spawning sprite object of the enemy

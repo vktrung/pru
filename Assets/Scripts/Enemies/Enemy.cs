@@ -1,40 +1,18 @@
-using System;
 using UnityEngine;
-
-[Serializable]
-public class EnemyStats
-{
-    public int hp = 999;
-    public int damage = 1;
-    public int exp_reward = 400;
-    public float moveSpeed = 1f;
-
-    public EnemyStats(EnemyStats stats)
-    {
-        this.hp = stats.hp;
-        this.damage = stats.damage;
-        this.exp_reward = stats.exp_reward;
-        this.moveSpeed = stats.moveSpeed;
-    }
-
-    internal void ApplyProgress(float progress)
-    {
-        this.hp = (int)(hp * progress);
-        this.damage = (int)(damage * progress);
-    }
-}
-
 
 public class Enemy : MonoBehaviour, IDamageable
 {
     Transform targetDestination;
     GameObject targetGameObject;
     Character targetCharacter;
-
+    [SerializeField] float speed;
 
     Rigidbody2D rgb2d;
 
-    public EnemyStats stats;
+    [SerializeField]
+    int hp = 999;
+    [SerializeField] int damage = 1;
+    [SerializeField] int exp_reward = 400;
 
 
     private void Awake()
@@ -53,7 +31,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void FixedUpdate()
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rgb2d.velocity = direction * stats.moveSpeed;
+        rgb2d.velocity = direction * speed;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -71,29 +49,19 @@ public class Enemy : MonoBehaviour, IDamageable
             targetCharacter = targetGameObject.GetComponent<Character>();
         }
 
-        targetCharacter.TakeDamage(stats.damage);
+        targetCharacter.TakeDamage(damage);
     }
 
 
     public void TakeDamage(int damage)
     {
-        stats.hp -= damage;
+        hp -= damage;
 
-        if (stats.hp < 1)
+        if (hp < 1)
         {
-            targetGameObject.GetComponent<Level>().AddExperience(stats.exp_reward);
+            targetGameObject.GetComponent<Level>().AddExperience(exp_reward);
             GetComponent<DropOnDestroy>().CheckDrop();
             Destroy(gameObject);
         }
-    }
-
-    internal void SetStats(EnemyStats stats)
-    {
-        this.stats = new EnemyStats(stats);
-    }
-
-    internal void UpdateStatsForProgress(float progress)
-    {
-        stats.ApplyProgress(progress);
     }
 }
