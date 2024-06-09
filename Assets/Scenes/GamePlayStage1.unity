@@ -1043,6 +1043,7 @@ GameObject:
   - component: {fileID: 335939108}
   - component: {fileID: 335939109}
   - component: {fileID: 335939110}
+  - component: {fileID: 335939111}
   m_Layer: 0
   m_Name: ---WORLD---
   m_TagString: Untagged
@@ -1136,6 +1137,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToCompleteLevel: 60
   levelCompletePanel: {fileID: 0}
+--- !u!114 &335939111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335939105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f45b09e332091c4896f37b65e14ff50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressTimeRate: 10
+  progressPerSplit: 0.5
 --- !u!1 &356463840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,8 +3741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0db0f81ef4cfb48be552b5f7ee01c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageProgress: {fileID: 335939111}
   enemy: {fileID: 6507064791834879611, guid: fc23bf6245b5ec44b81e596db3a84caa, type: 3}
-  enemyAnimation: {fileID: 3368397166299890980, guid: 3a546f58b78212c47898dd90cd14988c, type: 3}
   spawnArea: {x: 15, y: 8}
   spawnTimer: 2
 --- !u!4 &1192330764
