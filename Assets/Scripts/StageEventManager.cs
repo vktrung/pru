@@ -7,10 +7,16 @@ public class StageEventManager : MonoBehaviour
 
     StageTime stageTime;
     int eventIndexer;
+    PlayerWinManager playerWin;
 
     private void Awake()
     {
         stageTime = GetComponent<StageTime>();
+    }
+
+    private void Start()
+    {
+        playerWin = FindObjectOfType<PlayerWinManager>();
     }
 
     private void Update()
@@ -36,13 +42,18 @@ public class StageEventManager : MonoBehaviour
                     break;
 
                 case StageEventType.WinStage:
-
+                    WinStage();
                     break;
             }
 
             Debug.Log(stageData.stageEvents[eventIndexer].message);
             eventIndexer += 1;
         }
+    }
+
+    private void WinStage()
+    {
+        playerWin.Win();
     }
 
     private void SpawnEnemy()
