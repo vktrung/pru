@@ -32,9 +32,10 @@ public class ThrowingKnifeProjectTile : MonoBehaviour
             Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.3f);
             foreach (Collider2D c in hit)
             {
-                Enemy enemy = c.GetComponent<Enemy>();
+                IDamageable enemy = c.GetComponent<IDamageable>();
                 if (enemy != null)
                 {
+                    PostDame(damage, transform.position);
                     enemy.TakeDamage(damage);
                     hitDetected = true;
                     break;
@@ -52,5 +53,10 @@ public class ThrowingKnifeProjectTile : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    public void PostDame(int damage, Vector3 worldPosition)
+    {
+        MessageSystem.instance.PostMessage(damage.ToString(), worldPosition);
     }
 }

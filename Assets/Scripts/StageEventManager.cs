@@ -19,14 +19,45 @@ public class StageEventManager : MonoBehaviour
 
         if (stageTime.time > stageData.stageEvents[eventIndexer].time)
         {
-            Debug.Log(stageData.stageEvents[eventIndexer].message);
-
-            for (int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
+            switch (stageData.stageEvents[eventIndexer].eventType)
             {
-                enemiesManager.SpawnEnemy(stageData.stageEvents[eventIndexer].enemyToSpawn);
+                case StageEventType.SpawnEnemy:
+                    for (int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
+                    {
+                        SpawnEnemy();
+                    }
+                    break;
+
+                case StageEventType.SpawnObject:
+                    for (int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
+                    {
+                        SpawnObject();
+                    }
+                    break;
+
+                case StageEventType.WinStage:
+
+                    break;
             }
 
+            Debug.Log(stageData.stageEvents[eventIndexer].message);
             eventIndexer += 1;
         }
+    }
+
+    private void SpawnEnemy()
+    {
+        enemiesManager.SpawnEnemy(stageData.stageEvents[eventIndexer].enemyToSpawn);
+    }
+
+    private void SpawnObject()
+    {
+        Vector3 positionToSpawn = GameManager.instance.transform.position;
+        positionToSpawn += UltilityTools.GenerateRandomPositionSquarePattern(new Vector2(5f, 5f));
+
+        SpawnManager.instance.SpawnObject(
+            positionToSpawn,
+            stageData.stageEvents[eventIndexer].objectToSpawn
+            );
     }
 }
