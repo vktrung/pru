@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: PumkinHead PitchFork
   animatedPrefab: {fileID: 964914027347123149, guid: 043b022a25a886248a57e5c04fc7059a, type: 3}
+  stats:
+    hp: 500
+    damage: 1
+    exp_reward: 400
+    moveSpeed: 5
