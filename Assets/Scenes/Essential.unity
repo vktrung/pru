@@ -1950,9 +1950,11 @@ MonoBehaviour:
   armor: 0
   hpRegenerationRate: 1
   hpRegenerationTimer: 0
+  damageBonus: 0
   hpBar: {fileID: 416462979}
   level: {fileID: 0}
   coins: {fileID: 0}
+  dataContainer: {fileID: 11400000, guid: bf5a703310a4b924793af3268b631aa3, type: 2}
 --- !u!114 &864193659
 MonoBehaviour:
   m_ObjectHideFlags: 0

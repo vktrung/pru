@@ -16,7 +16,7 @@ MonoBehaviour:
   stageCompletion: 01
   upgrades:
   - persitentUpgrades: 0
-    level: 16
+    level: 10
     costToUpgrade: 100
   - persitentUpgrades: 1
     level: 0

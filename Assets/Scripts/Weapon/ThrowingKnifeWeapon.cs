@@ -36,7 +36,7 @@ public class ThrowingKnifeWeapon : WeaponBase
 
             throwingDaggerProjectTile.SetDirection(playerMove.lastHorizontalVector, 0f);
 
-            throwingDaggerProjectTile.damage = weaponStats.damage;
+            throwingDaggerProjectTile.damage = GetDamage();
 
         }
 

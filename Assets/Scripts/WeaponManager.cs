@@ -8,13 +8,17 @@ public class WeaponManager : MonoBehaviour
 
     List<WeaponBase> weapons;
 
+    Character character;
+
     private void Awake()
     {
         weapons = new List<WeaponBase>();
+        character = GetComponent<Character>();
     }
     private void Start()
     {
         AddWeapon(startingWeapon);
+
     }
 
     public void AddWeapon(WeaponData weaponData)
@@ -25,6 +29,7 @@ public class WeaponManager : MonoBehaviour
 
         weaponBase.SetData(weaponData);
         weapons.Add(weaponBase);
+        weaponBase.AddOwnerCharacter(character);
 
         Level level = GetComponent<Level>();
         if (level != null)
