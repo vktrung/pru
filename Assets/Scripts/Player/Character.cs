@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public int maxHp = 1000;
-    public int currentHp = 1000;
+    public int maxHp = 100;
+    public int currentHp = 100;
     public int armor = 0;
 
     public float hpRegenerationRate = 1f;

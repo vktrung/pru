@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Knife
   stats:
-    damage: 100
+    damage: 10
     timeToAttack: 2
     numberOfAttack: 2
   weaponBasePrefabs: {fileID: 317702131782225703, guid: 937a28c74786a574ea28ac875792689f, type: 3}

@@ -1856,7 +1856,7 @@ MonoBehaviour:
   movementVector: {x: 0, y: 0, z: 0}
   lastHorizontalVector: 0
   lastVerticalVector: 0
-  speed: 10
+  speed: 5
 --- !u!4 &864193655
 Transform:
   m_ObjectHideFlags: 0
@@ -1945,8 +1945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb62c327c1248b488388e1af1e41a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 1000
-  currentHp: 500
+  maxHp: 100
+  currentHp: 100
   armor: 0
   hpRegenerationRate: 1
   hpRegenerationTimer: 0
@@ -1973,6 +1973,7 @@ MonoBehaviour:
   acquiredUpgrade: []
   upgradesAvailableOnStart:
   - {fileID: 11400000, guid: 6fc328f5006333d498d8aee5e4f4c07e, type: 2}
+  - {fileID: 11400000, guid: 8882ed9ed6fea9346ab5a8dcbddc54c8, type: 2}
 --- !u!114 &864193660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,7 +2014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectsContainer: {fileID: 221365718}
-  startingWeapon: {fileID: 11400000, guid: 553cdddf1b3eeaa4989eb61297fa7d6f, type: 2}
+  startingWeapon: {fileID: 11400000, guid: 7c3ea1bf7a4f8ac40b93995368537574, type: 2}
 --- !u!114 &864193663
 MonoBehaviour:
   m_ObjectHideFlags: 0
