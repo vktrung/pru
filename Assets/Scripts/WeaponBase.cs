@@ -45,18 +45,29 @@ public abstract class WeaponBase : MonoBehaviour
             IDamageable e = collider[i].GetComponent<IDamageable>();
             if (e != null)
             {
-                PostDamage(damage, collider[i].transform.position);
-                e.TakeDamage(damage);
+                ApplyDamage(collider[i].transform.position, damage, e);
             }
 
         }
+    }
+
+    public void ApplyDamage(Vector3 position, int damage, IDamageable e)
+    {
+        PostDamage(damage, position);
+        e.TakeDamage(damage);
+        ApplyAditionalEffects(e);
+    }
+
+    private void ApplyAditionalEffects(IDamageable e)
+    {
+        e.Stun(weaponStats.stun);
     }
 
     public virtual void SetData(WeaponData wd)
     {
         weaponData = wd;
 
-        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.numberOfAttack);
+        weaponStats = new WeaponStats(wd.stats);
     }
 
     public abstract void Attack();
@@ -109,5 +120,19 @@ public abstract class WeaponBase : MonoBehaviour
                 break;
         }
         vectorOfAttack = vectorOfAttack.normalized;
+    }
+
+    public GameObject SpawnProjectTile(GameObject projectilePrefab, Vector3 position)
+    {
+        GameObject projecttileGo = Instantiate(projectilePrefab);
+        projecttileGo.transform.position = position;
+
+        ProjectTile projecttile = projecttileGo.GetComponent<ProjectTile>();
+
+        projecttile.SetDirection(vectorOfAttack.x, vectorOfAttack.y);
+
+        projecttile.SetStats(this);
+
+        return projecttileGo;
     }
 }

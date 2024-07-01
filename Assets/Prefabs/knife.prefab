@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5346798985027692848}
   - component: {fileID: 4663988313978469055}
-  - component: {fileID: 5232138051743622242}
+  - component: {fileID: 7093556267947618353}
   m_Layer: 0
   m_Name: knife
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5232138051743622242
+--- !u!114 &7093556267947618353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 48800958373556907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6242673049aad2a48971a50c2d7f8d20, type: 3}
+  m_Script: {fileID: 11500000, guid: 57a19c3f2d96b084e88503620a03c833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  damage: 5
+  attackArea: 0.7
+  speed: 1

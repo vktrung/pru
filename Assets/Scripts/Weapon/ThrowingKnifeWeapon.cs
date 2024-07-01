@@ -13,7 +13,6 @@ public class ThrowingKnifeWeapon : WeaponBase
 
         for (int i = 0; i < weaponStats.numberOfAttack; i++)
         {
-            GameObject throwKnife = Instantiate(knifePreFab);
 
             Vector3 newKnifePosition = transform.position;
 
@@ -23,15 +22,7 @@ public class ThrowingKnifeWeapon : WeaponBase
                 newKnifePosition.y += i * spread; // spreading the knives along the line
             }
 
-
-            throwKnife.transform.position = newKnifePosition;
-
-            ThrowingKnifeProjectTile throwingDaggerProjectTile = throwKnife.GetComponent<ThrowingKnifeProjectTile>();
-
-            throwingDaggerProjectTile.SetDirection(vectorOfAttack.x, vectorOfAttack.y);
-
-            throwingDaggerProjectTile.damage = GetDamage();
-
+            SpawnProjectTile(knifePreFab, newKnifePosition);
         }
     }
 }

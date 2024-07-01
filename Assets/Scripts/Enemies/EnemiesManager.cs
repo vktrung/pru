@@ -150,9 +150,7 @@ public class EnemiesManager : MonoBehaviour
         newEnemy.transform.parent = transform;
 
         //spawning sprite object of the enemy
-        GameObject spriteObject = Instantiate(enemyToSpawn.animatedPrefab);
-        spriteObject.transform.parent = newEnemy.transform;
-        spriteObject.transform.localPosition = Vector3.zero;
+        newEnemyComponent.InitSprite(enemyToSpawn.animatedPrefab);
     }
 
     private void SpawnBossEnemy(Enemy newBoss)
