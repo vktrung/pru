@@ -32,7 +32,6 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] StageProgress stageProgress;
     [SerializeField] GameObject enemy;
     [SerializeField] Vector2 spawnArea;
-    [SerializeField] float spawnTimer;
     GameObject player;
 
     List<Enemy> bossEnemiesList;
@@ -43,10 +42,13 @@ public class EnemiesManager : MonoBehaviour
     List<EnemiesSpawnGroup> enemiesSpawnGroupsList;
     List<EnemiesSpawnGroup> repeatedSpawnGroupList;
 
+    int spawnPerFrame = 2;
+
     private void Start()
     {
         player = GameManager.instance.playerTransform.gameObject;
         bossHealthBar = FindObjectOfType<BossHpBar>(true).GetComponent<Slider>();
+        stageProgress = FindObjectOfType<StageProgress>();
     }
 
     private void Update()
@@ -78,14 +80,19 @@ public class EnemiesManager : MonoBehaviour
     private void ProcessSpawn()
     {
         if (enemiesSpawnGroupsList == null) { return; }
-        if (enemiesSpawnGroupsList.Count > 0)
-        {
-            SpawnEnemy(enemiesSpawnGroupsList[0].enemyData, enemiesSpawnGroupsList[0].isBoss);
-            enemiesSpawnGroupsList[0].count -= 1;
 
-            if (enemiesSpawnGroupsList[0].count <= 0)
+        for (int i = 0; i < spawnPerFrame; i++)
+        {
+            if (enemiesSpawnGroupsList.Count > 0)
             {
-                enemiesSpawnGroupsList.RemoveAt(0);
+                if (enemiesSpawnGroupsList[0].count <= 0) { return; }
+                SpawnEnemy(enemiesSpawnGroupsList[0].enemyData, enemiesSpawnGroupsList[0].isBoss);
+                enemiesSpawnGroupsList[0].count -= 1;
+
+                if (enemiesSpawnGroupsList[0].count <= 0)
+                {
+                    enemiesSpawnGroupsList.RemoveAt(0);
+                }
             }
         }
     }
