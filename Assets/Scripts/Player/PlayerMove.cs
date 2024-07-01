@@ -9,10 +9,14 @@ public class PlayerMove : MonoBehaviour
     public Vector3 movementVector;
 
     [HideInInspector]
-    public float lastHorizontalVector;
+    public float lastHorizontalDeCoupleVector;
+    [HideInInspector]
+    public float lastVerticalDeCoupleVector;
 
     [HideInInspector]
-    public float lastVerticalVector;
+    public float lastHorizontalCoupleVector;
+    [HideInInspector]
+    public float lastVerticalCoupleVector;
 
     [SerializeField] float speed = 3f;
 
@@ -28,8 +32,11 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        lastHorizontalVector = -1f;
-        lastHorizontalVector = 1f;
+        lastHorizontalDeCoupleVector = -1f;
+        lastVerticalDeCoupleVector = 1f;
+
+        lastHorizontalCoupleVector = -1f;
+        lastVerticalCoupleVector = 1f;
     }
 
 
@@ -39,13 +46,19 @@ public class PlayerMove : MonoBehaviour
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
 
+        if (movementVector.x != 0 || movementVector.y != 0)
+        {
+            lastHorizontalCoupleVector = movementVector.x;
+            lastVerticalCoupleVector = movementVector.y;
+        }
+
         if (movementVector.x != 0)
         {
-            lastHorizontalVector = movementVector.x;
+            lastHorizontalDeCoupleVector = movementVector.x;
         }
         else
         {
-            lastVerticalVector = movementVector.y;
+            lastVerticalDeCoupleVector = movementVector.y;
         }
 
         animate.horizontal = movementVector.x;

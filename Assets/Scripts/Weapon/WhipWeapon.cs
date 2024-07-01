@@ -15,22 +15,6 @@ public class WhipWeapon : WeaponBase
         playerMove = GetComponentInParent<PlayerMove>();
     }
 
-
-    private void ApplyDamage(Collider2D[] collider)
-    {
-        int damage = GetDamage();
-        for (int i = 0; i < collider.Length; i++)
-        {
-            IDamageable e = collider[i].GetComponent<IDamageable>();
-            if (e != null)
-            {
-                PostDamage(damage, collider[i].transform.position);
-                e.TakeDamage(damage);
-            }
-
-        }
-    }
-
     public override void Attack()
     {
         StartCoroutine(AttackProcess());
@@ -40,7 +24,7 @@ public class WhipWeapon : WeaponBase
     {
         for (int i = 0; i < weaponStats.numberOfAttack; i++)
         {
-            if (playerMove.lastHorizontalVector > 0)
+            if (playerMove.lastHorizontalDeCoupleVector > 0)
             {
                 rightWhipObject.SetActive(true);
 

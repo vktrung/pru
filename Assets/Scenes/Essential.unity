@@ -1854,8 +1854,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementVector: {x: 0, y: 0, z: 0}
-  lastHorizontalVector: 0
-  lastVerticalVector: 0
+  lastHorizontalDeCoupleVector: 0
+  lastVerticalDeCoupleVector: 0
+  lastHorizontalCoupleVector: 0
+  lastVerticalCoupleVector: 0
   speed: 5
 --- !u!4 &864193655
 Transform:
@@ -2014,7 +2016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectsContainer: {fileID: 221365718}
-  startingWeapon: {fileID: 11400000, guid: 7c3ea1bf7a4f8ac40b93995368537574, type: 2}
+  startingWeapon: {fileID: 11400000, guid: e455274144d0b7844bcda60109fdf702, type: 2}
 --- !u!114 &864193663
 MonoBehaviour:
   m_ObjectHideFlags: 0

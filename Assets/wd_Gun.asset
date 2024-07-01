@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ede67e0793f21341ac4b4f457865e70, type: 3}
+  m_Name: wd_Gun
+  m_EditorClassIdentifier: 
+  Name: Gun
+  stats:
+    damage: 1
+    timeToAttack: 1
+    numberOfAttack: 1
+  weaponBasePrefabs: {fileID: 1706405803439434208, guid: 8cba125420df65944a819bcb53e8cec1, type: 3}
+  upgrades: []
