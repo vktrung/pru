@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ProjectTile : MonoBehaviour
 {
+    public PoolMember poolMember;
     WeaponBase weapon;
 
     public float attackArea = 0.7f;
@@ -45,7 +46,19 @@ public class ProjectTile : MonoBehaviour
         ttl -= Time.deltaTime;
         if (ttl < 0f)
         {
+            DestroyProjectile();
+        }
+    }
+
+    private void DestroyProjectile()
+    {
+        if (poolMember == null)
+        {
             Destroy(gameObject);
+        }
+        else
+        {
+            poolMember.ReturnToPool();
         }
     }
 
@@ -71,7 +84,7 @@ public class ProjectTile : MonoBehaviour
         }
         if (numeOfHits <= 0)
         {
-            Destroy(gameObject);
+            DestroyProjectile();
         }
     }
 
@@ -98,5 +111,10 @@ public class ProjectTile : MonoBehaviour
         damage = weaponBase.GetDamage();
         numeOfHits = weaponBase.weaponStats.numberOfHits;
         speed = weaponBase.weaponStats.projectileSpeed;
+    }
+
+    private void OnEnable()
+    {
+        ttl = 6f;
     }
 }

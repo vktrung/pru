@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GunWeapon : WeaponBase
 {
-    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] PoolObjectData bulletPrefab;
     public override void Attack()
     {
         UpdateVectorOfAttack();
@@ -12,6 +12,7 @@ public class GunWeapon : WeaponBase
 
             Vector3 newBulletPosition = transform.position;
             SpawnProjectTile(bulletPrefab, newBulletPosition);
+
         }
 
     }

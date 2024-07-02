@@ -1121,7 +1121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 40b81c462be0e9548a90ad960b6b940a, type: 2}
-  enemiesManager: {fileID: 1192330763}
 --- !u!114 &335939111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3741,54 +3740,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3786616536462488555, guid: d60ddcfec68ac4d489cf2534d84494a6, type: 3}
   m_PrefabInstance: {fileID: 951796852}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1192330762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1192330764}
-  - component: {fileID: 1192330763}
-  m_Layer: 0
-  m_Name: ---ENEMY---
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1192330763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192330762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b0db0f81ef4cfb48be552b5f7ee01c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stageProgress: {fileID: 335939111}
-  enemy: {fileID: 6507064791834879611, guid: fc23bf6245b5ec44b81e596db3a84caa, type: 3}
-  spawnArea: {x: 15, y: 8}
-  spawnTimer: 2
---- !u!4 &1192330764
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192330762}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1260959487
 GameObject:
   m_ObjectHideFlags: 0
@@ -5912,6 +5863,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 335939107}
-  - {fileID: 1192330764}
   - {fileID: 717464324}
   - {fileID: 619394802}

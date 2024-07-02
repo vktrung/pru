@@ -4,7 +4,7 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] Transform weaponObjectsContainer;
-    [SerializeField] WeaponData startingWeapon;
+    [SerializeField] PoolManager poolManager;
 
     List<WeaponBase> weapons;
 
@@ -15,11 +15,7 @@ public class WeaponManager : MonoBehaviour
         weapons = new List<WeaponBase>();
         character = GetComponent<Character>();
     }
-    private void Start()
-    {
-        AddWeapon(startingWeapon);
 
-    }
 
     public void AddWeapon(WeaponData weaponData)
     {
@@ -28,6 +24,8 @@ public class WeaponManager : MonoBehaviour
         WeaponBase weaponBase = weaponGameObject.GetComponent<WeaponBase>();
 
         weaponBase.SetData(weaponData);
+        weaponBase.SetPoolManager(poolManager);
+
         weapons.Add(weaponBase);
         weaponBase.AddOwnerCharacter(character);
 

@@ -10,7 +10,7 @@ public enum DirectionOfAttack
 
 public abstract class WeaponBase : MonoBehaviour
 {
-    PlayerMove playerMove;
+    public PlayerMove playerMove;
 
     public WeaponData weaponData;
 
@@ -21,6 +21,8 @@ public abstract class WeaponBase : MonoBehaviour
     Character wielder;
     public Vector2 vectorOfAttack;
     [SerializeField] DirectionOfAttack attackDirection;
+
+    PoolManager poolManager;
 
     private void Awake()
     {
@@ -55,12 +57,13 @@ public abstract class WeaponBase : MonoBehaviour
     {
         PostDamage(damage, position);
         e.TakeDamage(damage);
-        ApplyAditionalEffects(e);
+        ApplyAditionalEffects(e, position);
     }
 
-    private void ApplyAditionalEffects(IDamageable e)
+    private void ApplyAditionalEffects(IDamageable e, Vector3 enemyPosition)
     {
         e.Stun(weaponStats.stun);
+        e.Knockback((enemyPosition - transform.position).normalized, weaponStats.knockback, weaponStats.knockbackTimeWeight);
     }
 
     public virtual void SetData(WeaponData wd)
@@ -68,6 +71,11 @@ public abstract class WeaponBase : MonoBehaviour
         weaponData = wd;
 
         weaponStats = new WeaponStats(wd.stats);
+    }
+
+    public void SetPoolManager(PoolManager poolManager)
+    {
+        this.poolManager = poolManager;
     }
 
     public abstract void Attack();
@@ -122,9 +130,10 @@ public abstract class WeaponBase : MonoBehaviour
         vectorOfAttack = vectorOfAttack.normalized;
     }
 
-    public GameObject SpawnProjectTile(GameObject projectilePrefab, Vector3 position)
+    public GameObject SpawnProjectTile(PoolObjectData poolObjectData, Vector3 position)
     {
-        GameObject projecttileGo = Instantiate(projectilePrefab);
+        GameObject projecttileGo = poolManager.GetObject(poolObjectData);
+
         projecttileGo.transform.position = position;
 
         ProjectTile projecttile = projecttileGo.GetComponent<ProjectTile>();

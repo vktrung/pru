@@ -38,6 +38,9 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] EnemyData enemyData;
 
     float stunned;
+    Vector3 knockbackVector;
+    float knockbackForce;
+    float knockbackTimeWeight;
 
 
     private void Awake()
@@ -63,15 +66,37 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void FixedUpdate()
     {
-        if (stunned >= 0)
-        {
-            rgb2d.velocity = Vector2.zero;
-            stunned -= Time.deltaTime;
-            return;
-        }
+        ProcessStun();
+        Move();
+    }
 
+    private void ProcessStun()
+    {
+        if (stunned > 0f)
+        {
+            stunned -= Time.deltaTime;
+        }
+    }
+
+    private void Move()
+    {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rgb2d.velocity = direction * stats.moveSpeed;
+        rgb2d.velocity = CalculateMovementVelocity(direction) + CalculateKnockback();
+    }
+
+    private Vector3 CalculateMovementVelocity(Vector3 direction)
+    {
+
+        return direction * stats.moveSpeed * (stunned > 0f ? 0f : 1f);
+    }
+
+    private Vector3 CalculateKnockback()
+    {
+        if (knockbackTimeWeight > 0f)
+        {
+            knockbackTimeWeight -= Time.fixedDeltaTime;
+        }
+        return knockbackVector * knockbackForce * (knockbackTimeWeight > 0f ? 1f : 0f);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -125,5 +150,12 @@ public class Enemy : MonoBehaviour, IDamageable
     public void Stun(float stun)
     {
         stunned = stun;
+    }
+
+    public void Knockback(Vector3 vector, float force, float timeWeight)
+    {
+        knockbackVector = vector;
+        knockbackForce = force;
+        knockbackTimeWeight = timeWeight;
     }
 }

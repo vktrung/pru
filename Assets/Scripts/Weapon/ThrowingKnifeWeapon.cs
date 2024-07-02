@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ThrowingKnifeWeapon : WeaponBase
 {
-    [SerializeField] GameObject knifePreFab;
+    [SerializeField] PoolObjectData knifePreFab;
     [SerializeField] float spread = 0.5f;
 
 

@@ -26,6 +26,8 @@ public class DataContainer : ScriptableObject
 
     public List<PlayerUpgrades> upgrades;
 
+    public CharacterData selectedCharacter;
+
     public void StageComplete(int i)
     {
         stageCompletion[i] = true;
@@ -34,5 +36,10 @@ public class DataContainer : ScriptableObject
     public int GetUpgradeLevel(PlayerPersitentUpgrades persitentUpgrade)
     {
         return upgrades[(int)persitentUpgrade].level;
+    }
+
+    public void SetSelectedCharacter(CharacterData character)
+    {
+        selectedCharacter = character;
     }
 }

@@ -28,9 +28,23 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
+        LoadSelectedCharacter(dataContainer.selectedCharacter);
+
         ApplyPersistantUpgrades();
 
         hpBar.SetState(currentHp, maxHp);
+    }
+
+    private void LoadSelectedCharacter(CharacterData selectedCharacter)
+    {
+        InitAnimation(selectedCharacter.spritePrefab);
+        GetComponent<WeaponManager>().AddWeapon(selectedCharacter.startingWeapon);
+    }
+
+    private void InitAnimation(GameObject spritePrefab)
+    {
+        GameObject animObject = Instantiate(spritePrefab, transform);
+        GetComponent<Animate>().SetAnimate(animObject);
     }
 
     private void ApplyPersistantUpgrades()

@@ -12,6 +12,8 @@ public class WeaponStats
     public int numberOfHits;
     public float projectileSpeed;
     public float stun;
+    public float knockback;
+    public float knockbackTimeWeight;
 
 
     public WeaponStats(WeaponStats stats)
@@ -22,6 +24,8 @@ public class WeaponStats
         this.numberOfHits = stats.numberOfHits;
         this.projectileSpeed = stats.projectileSpeed;
         this.stun = stats.stun;
+        this.knockback = stats.knockback;
+        this.knockbackTimeWeight = stats.knockbackTimeWeight;
     }
 
     internal void Sum(WeaponStats weaponUpgradeStats)
@@ -32,6 +36,8 @@ public class WeaponStats
         this.numberOfHits += weaponUpgradeStats.numberOfHits;
         this.projectileSpeed += weaponUpgradeStats.projectileSpeed;
         this.stun += weaponUpgradeStats.stun;
+        this.knockback += weaponUpgradeStats.knockback;
+        this.knockbackTimeWeight += weaponUpgradeStats.knockbackTimeWeight;
     }
 }
 
