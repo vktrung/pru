@@ -3086,7 +3086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageProgress: {fileID: 0}
-  enemy: {fileID: 6507064791834879611, guid: fc23bf6245b5ec44b81e596db3a84caa, type: 3}
+  poolManager: {fileID: 1568570175}
   spawnArea: {x: 15, y: 8}
   bossHealthBar: {fileID: 0}
 --- !u!4 &1192330764

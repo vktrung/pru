@@ -7,7 +7,7 @@ public class PoolMember : MonoBehaviour
     public void Set(ObjectPool pool)
     {
         this.pool = pool;
-        GetComponent<ProjectTile>().poolMember = this;
+        GetComponent<IPoolMember>().SetPoolMember(this);
     }
 
     public void ReturnToPool()

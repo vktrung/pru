@@ -4,20 +4,28 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
 
-    GameObject originalPrefab;
+    PoolObjectData originalPoolData;
     List<GameObject> pool;
 
-    public void Set(GameObject originalPrefab)
+    public void Set(PoolObjectData pod)
     {
         pool = new List<GameObject>();
-        this.originalPrefab = originalPrefab;
+        originalPoolData = pod;
     }
 
     public void InstantiateObject()
     {
-        GameObject newObject = Instantiate(originalPrefab, transform);
-        pool.Add(newObject);
-        PoolMember poolMenber = newObject.AddComponent<PoolMember>();
+        GameObject newObject = Instantiate(originalPoolData.originalPrefab, transform);
+        GameObject mainObject = newObject;
+        if (originalPoolData.containerPrefab != null)
+        {
+            GameObject container = Instantiate(originalPoolData.containerPrefab);
+            newObject.transform.SetParent(container.transform);
+            newObject.transform.localPosition = Vector3.zero;
+            mainObject = container;
+        }
+        pool.Add(mainObject);
+        PoolMember poolMenber = mainObject.AddComponent<PoolMember>();
         poolMenber.Set(this);
     }
 

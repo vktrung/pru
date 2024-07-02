@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7a58bbd49c00540acd0bc7395d811e, type: 3}
+  m_Name: Bat PoolObjectData
+  m_EditorClassIdentifier: 
+  originalPrefab: {fileID: 3368397166299890980, guid: 3a546f58b78212c47898dd90cd14988c, type: 3}
+  containerPrefab: {fileID: 6507064791834879611, guid: fc23bf6245b5ec44b81e596db3a84caa, type: 3}
+  poolID: 1

@@ -23,3 +23,4 @@ MonoBehaviour:
     level: 0
     max_level: 10
     costToUpgrade: 100
+  selectedCharacter: {fileID: 11400000, guid: 3a745ea34d0a747458f1fcf37c9e2a27, type: 2}

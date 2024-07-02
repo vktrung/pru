@@ -25,7 +25,7 @@ public class EnemyStats
 }
 
 
-public class Enemy : MonoBehaviour, IDamageable
+public class Enemy : MonoBehaviour, IDamageable, IPoolMember
 {
     Transform targetDestination;
     GameObject targetGameObject;
@@ -41,22 +41,22 @@ public class Enemy : MonoBehaviour, IDamageable
     Vector3 knockbackVector;
     float knockbackForce;
     float knockbackTimeWeight;
-
+    PoolMember poolMember;
 
     private void Awake()
     {
         rgb2d = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    /*private void Start()
     {
         if (enemyData != null)
         {
-            InitSprite(enemyData.animatedPrefab);
+            //InitSprite(enemyData.animatedPrefab);
             SetStats(enemyData.stats);
             SetTarget(GameManager.instance.playerTransform.gameObject);
         }
-    }
+    }*/
 
     public void SetTarget(GameObject target)
     {
@@ -124,10 +124,23 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if (stats.hp < 1)
         {
-            targetGameObject.GetComponent<Level>().AddExperience(stats.exp_reward);
-            GetComponent<DropOnDestroy>().CheckDrop();
+            Defeated();
+        }
+    }
+
+    private void Defeated()
+    {
+        targetGameObject.GetComponent<Level>().AddExperience(stats.exp_reward);
+        GetComponent<DropOnDestroy>().CheckDrop();
+        if (poolMember != null)
+        {
+            poolMember.ReturnToPool();
+        }
+        else
+        {
             Destroy(gameObject);
         }
+
     }
 
     internal void SetStats(EnemyStats stats)
@@ -140,13 +153,6 @@ public class Enemy : MonoBehaviour, IDamageable
         stats.ApplyProgress(progress);
     }
 
-    internal void InitSprite(GameObject animatedPrefab)
-    {
-        GameObject spriteObject = Instantiate(animatedPrefab);
-        spriteObject.transform.parent = transform;
-        spriteObject.transform.localPosition = Vector3.zero;
-    }
-
     public void Stun(float stun)
     {
         stunned = stun;
@@ -157,5 +163,10 @@ public class Enemy : MonoBehaviour, IDamageable
         knockbackVector = vector;
         knockbackForce = force;
         knockbackTimeWeight = timeWeight;
+    }
+
+    public void SetPoolMember(PoolMember poolMember)
+    {
+        this.poolMember = poolMember;
     }
 }

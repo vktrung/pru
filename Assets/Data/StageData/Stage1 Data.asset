@@ -18,16 +18,16 @@ MonoBehaviour:
     message: 
     enemyToSpawn: {fileID: 11400000, guid: ac4c85076fd1ff44f93b82beccca5f05, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 10
+    count: 1
     isRepeatedEvent: 0
     repeatEverySeconds: 0
     repeatCount: 0
-  - eventType: 3
+  - eventType: 0
     time: 1111
     message: 
-    enemyToSpawn: {fileID: 0}
+    enemyToSpawn: {fileID: 11400000, guid: ac4c85076fd1ff44f93b82beccca5f05, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 0
+    count: 2
     isRepeatedEvent: 0
     repeatEverySeconds: 0
     repeatCount: 0

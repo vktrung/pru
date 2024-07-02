@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectTile : MonoBehaviour
+public class ProjectTile : MonoBehaviour, IPoolMember
 {
-    public PoolMember poolMember;
+    PoolMember poolMember;
     WeaponBase weapon;
 
     public float attackArea = 0.7f;
@@ -116,5 +116,10 @@ public class ProjectTile : MonoBehaviour
     private void OnEnable()
     {
         ttl = 6f;
+    }
+
+    public void SetPoolMember(PoolMember poolMember)
+    {
+        this.poolMember = poolMember;
     }
 }

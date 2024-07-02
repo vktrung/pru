@@ -4,6 +4,6 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public string Name;
-    public GameObject animatedPrefab;
+    public PoolObjectData poolObjectData;
     public EnemyStats stats;
 }

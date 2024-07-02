@@ -30,7 +30,7 @@ public class EnemiesSpawnGroup
 public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] StageProgress stageProgress;
-    [SerializeField] GameObject enemy;
+    [SerializeField] PoolManager poolManager;
     [SerializeField] Vector2 spawnArea;
     GameObject player;
 
@@ -134,7 +134,7 @@ public class EnemiesManager : MonoBehaviour
         position += player.transform.position;
 
         //spawning main enemy object
-        GameObject newEnemy = Instantiate(enemy);
+        GameObject newEnemy = poolManager.GetObject(enemyToSpawn.poolObjectData);
         newEnemy.transform.position = position;
 
         Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
@@ -148,9 +148,6 @@ public class EnemiesManager : MonoBehaviour
         }
 
         newEnemy.transform.parent = transform;
-
-        //spawning sprite object of the enemy
-        newEnemyComponent.InitSprite(enemyToSpawn.animatedPrefab);
     }
 
     private void SpawnBossEnemy(Enemy newBoss)
