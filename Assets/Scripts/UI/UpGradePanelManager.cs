@@ -4,18 +4,26 @@ using UnityEngine;
 public class UpGradePanelManager : MonoBehaviour
 {
     [SerializeField] GameObject panel;
+    [SerializeField] UpgradeDescriptionPanel upgradeDecripsionPanel;
     PauseManger pauseManger;
 
     [SerializeField] List<UpgradeButton> upgradeButtons;
 
+    Level characterLevel;
+
+    int selectedUpgradeID;
+    List<UpGradeData> upgradesData;
+
     private void Awake()
     {
         pauseManger = GetComponent<PauseManger>();
+        characterLevel = GameManager.instance.playerTransform.GetComponent<Level>();
     }
 
     private void Start()
     {
         HideButton();
+        selectedUpgradeID = -1;
     }
 
     public void OpenPanel(List<UpGradeData> upGradeDatas)
@@ -24,6 +32,7 @@ public class UpGradePanelManager : MonoBehaviour
         pauseManger.PauseGame();
         panel.SetActive(true);
 
+        this.upgradesData = upGradeDatas;
 
         for (int i = 0; i < upGradeDatas.Count; i++)
         {
@@ -42,12 +51,34 @@ public class UpGradePanelManager : MonoBehaviour
 
     public void Upgared(int pressedButtonID)
     {
-        GameManager.instance.playerTransform.GetComponent<Level>().Upgrade(pressedButtonID);
-        ClosePanel();
+        if (selectedUpgradeID != pressedButtonID)
+        {
+            selectedUpgradeID = pressedButtonID;
+            ShowDescription();
+        }
+        else
+        {
+            characterLevel.Upgrade(pressedButtonID);
+            ClosePanel();
+            HideDescription();
+        }
+    }
+
+    private void HideDescription()
+    {
+        upgradeDecripsionPanel.gameObject.SetActive(false);
+    }
+
+    private void ShowDescription()
+    {
+        upgradeDecripsionPanel.gameObject.SetActive(true);
+        upgradeDecripsionPanel.Set(upgradesData[selectedUpgradeID]);
     }
 
     public void ClosePanel()
     {
+        selectedUpgradeID = -1;
+
         HideButton();
 
         pauseManger.UnPauseGame();

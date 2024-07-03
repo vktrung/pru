@@ -15,6 +15,7 @@ public class UpGradeData : ScriptableObject
 {
     public UpgradeType type;
     public string Name;
+    public string Description;
     public Sprite icon;
 
     public WeaponData weaponData;
