@@ -56,7 +56,7 @@ public class StageEventManager : MonoBehaviour
 
     private void WinStage()
     {
-        playerWin.Win();
+        playerWin.Win(stageData.stageID);
     }
 
     private void SpawnEnemy(bool bossEnemy)

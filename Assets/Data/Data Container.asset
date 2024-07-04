@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Data Container
   m_EditorClassIdentifier: 
   coins: 0
-  stageCompletion: 01
+  stageCompletion: 010000
   upgrades:
   - persitentUpgrades: 0
     level: 0

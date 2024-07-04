@@ -11,10 +11,10 @@ public class PlayerWinManager : MonoBehaviour
         pauseManger = GetComponent<PauseManger>();
     }
 
-    public void Win()
+    public void Win(int stageID)
     {
         winMessagePanel.SetActive(true);
         pauseManger.PauseGame();
-        dataContainer.StageComplete(0);
+        dataContainer.StageComplete(stageID);
     }
 }
