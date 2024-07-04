@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   Name: Blunt Throwing Knife
   Description: more damage
-  icon: {fileID: 21300000, guid: 5a37553043c22704590a29c5007bff63, type: 3}
+  icon: {fileID: 21300000, guid: 45b77a2882bb46b46a0d6889eb860dbf, type: 3}
   weaponData: {fileID: 11400000, guid: 553cdddf1b3eeaa4989eb61297fa7d6f, type: 2}
   weaponUpgradeStats:
     damage: 20

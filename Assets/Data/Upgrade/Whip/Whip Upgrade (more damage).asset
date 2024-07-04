@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   Name: More Damage
   Description: add more damage
-  icon: {fileID: 21300000, guid: 5651a7702f854044ab7d436ee0ce1750, type: 3}
+  icon: {fileID: 21300000, guid: 93ebe2d5f77243549a1e4cd9b6bfc3c5, type: 3}
   weaponData: {fileID: 11400000, guid: 7c3ea1bf7a4f8ac40b93995368537574, type: 2}
   weaponUpgradeStats:
     damage: 20

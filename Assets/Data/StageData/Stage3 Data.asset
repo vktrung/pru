@@ -22,4 +22,6 @@ MonoBehaviour:
     isRepeatedEvent: 0
     repeatEverySeconds: 0
     repeatCount: 0
-  stageID: 2
+  stageID: Level 3 Completion
+  stageCompletionToUnlock:
+  - Level 2 Completion

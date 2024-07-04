@@ -2405,6 +2405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winMessagePanel: {fileID: 1022820386}
   dataContainer: {fileID: 11400000, guid: bf5a703310a4b924793af3268b631aa3, type: 2}
+  flagsTable: {fileID: 11400000, guid: 4b080d6194e86c24da17052c1274c2bc, type: 2}
 --- !u!1 &1005919609
 GameObject:
   m_ObjectHideFlags: 0

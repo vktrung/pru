@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   Name: Fast Attack
   Description: ' even faster'
-  icon: {fileID: 21300000, guid: dc7beca9250895a40aec51ed7524ae6e, type: 3}
+  icon: {fileID: 21300000, guid: a5988e53c7da2ed4d8aecae93c250f48, type: 3}
   weaponData: {fileID: 11400000, guid: 7c3ea1bf7a4f8ac40b93995368537574, type: 2}
   weaponUpgradeStats:
     damage: 0
