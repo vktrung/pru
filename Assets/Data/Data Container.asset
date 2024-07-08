@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0a330bafd83cd4ca5f8a72ab048179, type: 3}
   m_Name: Data Container
   m_EditorClassIdentifier: 
-  coins: 20000
+  coins: 0
   upgrades:
   - persitentUpgrades: 0
     level: 0
     max_level: 10
-    costToUpgrade: 100
+    costToUpgrade: 150
   - persitentUpgrades: 1
     level: 0
     max_level: 10
-    costToUpgrade: 100
-  selectedCharacter: {fileID: 11400000, guid: 3a745ea34d0a747458f1fcf37c9e2a27, type: 2}
+    costToUpgrade: 150
+  selectedCharacter: {fileID: 11400000, guid: f453adfacda2af145a3a5ba78c5997c3, type: 2}

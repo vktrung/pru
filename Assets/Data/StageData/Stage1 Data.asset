@@ -18,10 +18,37 @@ MonoBehaviour:
     message: 
     enemyToSpawn: {fileID: 11400000, guid: ac4c85076fd1ff44f93b82beccca5f05, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 5
+    count: 2
     isRepeatedEvent: 1
     repeatEverySeconds: 5
-    repeatCount: 2
+    repeatCount: 20
+  - eventType: 2
+    time: 10
+    message: spawn chest
+    enemyToSpawn: {fileID: 0}
+    objectToSpawn: {fileID: 1556559008538532714, guid: 14cd4e532fe4a4f49bf27edb1540c300, type: 3}
+    count: 1
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 10
+  - eventType: 0
+    time: 20
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: d0498b9042eba994eb99650ef11a5498, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 5
+    isRepeatedEvent: 1
+    repeatEverySeconds: 6
+    repeatCount: 20
+  - eventType: 1
+    time: 40
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: e7813f186530e6d4fb3713d824e0e859, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 1
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
   - eventType: 3
     time: 60
     message: 

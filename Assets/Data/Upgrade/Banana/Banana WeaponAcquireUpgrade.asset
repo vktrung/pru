@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22968fd4fce865541a71bcc3f9ed327b, type: 3}
-  m_Name: Armor Item Acquired Upgrade
+  m_Name: Banana WeaponAcquireUpgrade
   m_EditorClassIdentifier: 
-  type: 3
-  Name: Armor Get
-  Description: Add armor
-  icon: {fileID: 21300000, guid: 73f99f50c72ffed49a2487da52022592, type: 3}
-  weaponData: {fileID: 0}
+  type: 2
+  Name: Banana
+  Description: Creates a circle around you, dealing 1 damage every second
+  icon: {fileID: 21300000, guid: 39b7b6d135ca49a46b6162a58f983132, type: 3}
+  weaponData: {fileID: 11400000, guid: e455274144d0b7844bcda60109fdf702, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
@@ -26,6 +26,6 @@ MonoBehaviour:
     stun: 0
     knockback: 0
     knockbackTimeWeight: 0
-  item: {fileID: 11400000, guid: 0d6c231e0e887a94cbc7d9a19901a747, type: 2}
+  item: {fileID: 0}
   itemStats:
-    armor: 1
+    armor: 0

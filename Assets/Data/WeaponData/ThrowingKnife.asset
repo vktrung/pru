@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Knife
   stats:
-    damage: 247
+    damage: 10
     timeToAttack: 2
     numberOfAttack: 2
     numberOfHits: 2

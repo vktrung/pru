@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15542b8909edab44fb4243b52a1f9d44, type: 3}
-  m_Name: Armor
+  m_Script: {fileID: 11500000, guid: ad7a58bbd49c00540acd0bc7395d811e, type: 3}
+  m_Name: GunProjectile
   m_EditorClassIdentifier: 
-  Name: Armor
-  stats:
-    armor: 2
-  upgrades:
-  - {fileID: 11400000, guid: 9c96c6f5ad2df824fb41daee6b94d00f, type: 2}
+  originalPrefab: {fileID: 2708841157182406398, guid: 5e4e75fec8d5881418bb012607152df4, type: 3}
+  containerPrefab: {fileID: 0}
+  poolID: 0

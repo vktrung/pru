@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlagTable
   flags:
   - Name: Level 1 Completion
-    state: 1
+    state: 0
   - Name: Level 2 Completion
     state: 0
   - Name: Level 3 Completion

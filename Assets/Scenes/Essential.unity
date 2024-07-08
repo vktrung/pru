@@ -1048,8 +1048,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -44.521057, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1992,7 +1992,7 @@ MonoBehaviour:
   lastVerticalDeCoupleVector: 0
   lastHorizontalCoupleVector: 0
   lastVerticalCoupleVector: 0
-  speed: 5
+  speed: 3
 --- !u!4 &864193655
 Transform:
   m_ObjectHideFlags: 0
@@ -2109,6 +2109,8 @@ MonoBehaviour:
   upgradesAvailableOnStart:
   - {fileID: 11400000, guid: 6fc328f5006333d498d8aee5e4f4c07e, type: 2}
   - {fileID: 11400000, guid: 8882ed9ed6fea9346ab5a8dcbddc54c8, type: 2}
+  - {fileID: 11400000, guid: de1d32fd9b3dfd24d9735cd288df2247, type: 2}
+  - {fileID: 11400000, guid: 10c12ac8d9f35c84da10027ea147e121, type: 2}
 --- !u!114 &864193660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4880,8 +4882,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4909,7 +4911,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -38.308716, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

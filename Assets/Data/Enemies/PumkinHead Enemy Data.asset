@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: PumkinHead PitchFork
   poolObjectData: {fileID: 11400000, guid: 2e407a631de502f43a9345abe2c9e9e3, type: 2}
   stats:
-    hp: 500
-    damage: 1
+    hp: 100
+    damage: 8
     exp_reward: 400
-    moveSpeed: 5
+    moveSpeed: 3

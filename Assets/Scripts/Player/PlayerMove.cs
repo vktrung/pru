@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
     [HideInInspector]
     public float lastVerticalCoupleVector;
 
-    [SerializeField] float speed = 3f;
+    [SerializeField] float speed = 2f;
 
     Animate animate;
 
