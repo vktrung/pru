@@ -41,7 +41,7 @@ MonoBehaviour:
     repeatEverySeconds: 6
     repeatCount: 20
   - eventType: 1
-    time: 40
+    time: 10
     message: 
     enemyToSpawn: {fileID: 11400000, guid: e7813f186530e6d4fb3713d824e0e859, type: 2}
     objectToSpawn: {fileID: 0}
